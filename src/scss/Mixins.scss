@@ -1,0 +1,6 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius; /* Safari 和 Chrome */
+  -moz-border-radius: $radius; /* Firefox */
+  -khtml-border-radius: $radius; /* Konqueror */
+  border-radius: $radius; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+}

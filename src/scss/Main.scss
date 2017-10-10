@@ -1,0 +1,68 @@
+@import "./Default";
+
+body {
+  background: $grey !important;
+  font-family: $font-family !important;
+}
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0
+}
+
+.clearfix {
+  zoom: 1
+}
+
+.lf {
+  float: left;
+}
+
+.rf {
+  float: right;
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.contentMin {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.contentMin {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.marginCenter {
+  margin: 0 auto;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0 !important;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.padding-top-30 {
+  padding-top: 30px;
+}
+
