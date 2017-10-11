@@ -1,8 +1,21 @@
-import {increment,decrement} from './mutation-types.js'
+import {RECORD_USERINFO,GET_USERINFO} from './mutation-types.js'
 export default {
-  // [increment](state, detail) {
-  //   state.shopDetail = detail;
-  // },
-  [increment]: (state,n) => state.count+=n,
-  [decrement]: (state,playload) => state.count-=playload.count
+  // 记录用户信息
+  [RECORD_USERINFO](state, info) {
+    state.userInfo = info;
+    state.login = true;
+    _.setStore('userInfo',info);
+  },
+  //获取用户信息存入vuex
+  [GET_USERINFO](state, info) {
+    if (state.userInfo && (state.userInfo.userId === info.userId) && state.login) {
+      return;
+    }
+
+    if (info) {
+      state.userInfo = {...info};
+    } else {
+      state.userInfo = {};
+    }
+  }
 }

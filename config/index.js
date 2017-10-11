@@ -1,5 +1,6 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
-var path = require('path')
+var path = require('path');
+var configServer=require('./configServer');
 
 module.exports = {
   build: {
@@ -28,23 +29,16 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/login': {
-        target: 'http://localhost:8080',
+      '/verfyCode': {
+        target: configServer.one,
+        changeOrigin: true
+      },'/login': {
+        target: configServer.one,
         changeOrigin: true
       },'/security': {
-        target: 'http://localhost:8080',
+        target: configServer.one,
         changeOrigin: true
       }
-      /*'/stepapi/v3': {
-        target: 'https://step.newtouch.com',
-        changeOrigin: true
-      }, '/workapi/v1': {
-        target: 'https://www.newtouch.com',
-        changeOrigin: true
-      }, '/api/oauth/token': {
-        target: 'https://sso.newtouch.com',
-        changeOrigin: true
-      }*/
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

@@ -9,9 +9,10 @@ import App from './App.vue'
 import router from './router'
 import 'bootstrap/js/bootstrap.min.js'
 import 'jquery'
-import store from './store/'
+import store from 'src/store/'
 import 'toastr/build/toastr.css'
 import 'toastr'
+import 'src/utils/utils'
 
 
 // toastr弹出消息提示插件全局配置设置

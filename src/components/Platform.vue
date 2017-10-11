@@ -1,11 +1,12 @@
 <template>
   <div class="platform">
-    header
+    <PlatformHead />
     <router-view></router-view>
 
   </div>
 </template>
 <script>
+  import PlatformHead from "src/components/platform/Head.vue"
   export default {
     name: 'program',
     data () {
@@ -15,7 +16,8 @@
     },
     methods: {
 
-    }
+    },
+    components:{PlatformHead}
   }
 </script>
 
