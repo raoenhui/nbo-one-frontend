@@ -1,9 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import mutations from './mutations'
-Vue.use(Vuex)
+import actions from './actions'
+import getters from './getters'
 
+const state = {
+  userInfo: {}, //用户信息
+  login: true,//是否登录
+};
+
+Vue.use(Vuex);
 const store = new Vuex.Store({
+  state,
+  getters,
+  actions,
+  mutations,
+});
+/*const store = new Vuex.Store({
   state: {
     count: 0,
     todos: [
@@ -25,6 +38,6 @@ const store = new Vuex.Store({
       commit('decrement',playload)
     }
   }
-})
+})*/
 
 export default store;
