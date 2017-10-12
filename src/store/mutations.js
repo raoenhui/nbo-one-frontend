@@ -8,7 +8,7 @@ export default {
   },
   //获取用户信息存入vuex
   [GET_USERINFO](state, info) {
-    if (state.userInfo && (state.userInfo.userId === info.userId) && state.login) {
+    if (state.userInfo && info && (state.userInfo.userId === info.userId) && state.login) {
       return;
     }
 

@@ -37,17 +37,17 @@ Object.assign(_,{
     window.sessionStorage.removeItem(name);
   },
   setStore : (name, content)=>{
-    return _.setSessionStorage(name, content)
+    return _.setLocalStorage(name, content)
   },
   getStore : (name)=>{
-    var val=_.getSessionStorage(name);
+    var val=_.getLocalStorage(name);
     if(_.IsJsonString(val)){
       return JSON.parse(val)
     }
     return val
   },
   removeStore : (name)=>{
-    return _.removeSessionStorage(name)
+    return _.removeLocalStorage(name)
   },
   //判断是不是json字符串
   IsJsonString:(str)=> {

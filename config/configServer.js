@@ -2,12 +2,12 @@ var envs = [
 
   // 生产环境
   {
-    // active: true,
+    active: true,
     one: 'http://localhost:8080'
   },
   // 测试环境
   {
-    active: true,
+    // active: true,
     one: 'http://183.66.65.223:8080'
   }
 ];

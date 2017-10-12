@@ -15,7 +15,7 @@ function closeLoading() {
   }
 }
 
-function NewLoading() {
+function newLoading() {
 // debugger;
   var el = document.getElementById('newLoadDiv');
   if(el){
@@ -75,7 +75,7 @@ const Fetch = function (url = '', fetchData = {}, type = 'GET') {
 
 
   const defer = new Promise((resolve, reject) => {
-    NewLoading();
+    newLoading();
     fetch(url, requestConfig)
       .then(response => {
         return response.json()
@@ -90,6 +90,7 @@ const Fetch = function (url = '', fetchData = {}, type = 'GET') {
         resolve(data.body) //返回成功数据
       })
       .catch(error => {
+        closeLoading();
         //捕获异常
         toastr.error(error)
         reject()
