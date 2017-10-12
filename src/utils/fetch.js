@@ -1,3 +1,36 @@
+
+function getHtml(){
+  var html = '<div id="loading"><div id="loading-center"><div id="loading-center-absolute">' +
+    '<div class="object"></div><div class="object"></div><div class="object"></div>' +
+    '<div class="object"></div><div class="object"></div><div class="object"></div>' +
+    '<div class="object"></div><div class="object"></div><div class="object"></div>' +
+    '<div class="object"></div></div></div></div>';
+  return html;
+}
+function closeLoading() {
+  var el = document.getElementById('newLoadDiv');
+  if (document.readyState == 'complete' && el) {   //当页面加载状态
+    // document.getElementById("newDiv").remove();
+    el.parentNode.removeChild(el);
+  }
+}
+
+function NewLoading() {
+// debugger;
+  var el = document.getElementById('newLoadDiv');
+  if(el){
+    el.parentNode.removeChild(el);
+  }
+  var html = getHtml();
+  var newnode = document.createElement("div");
+  newnode.setAttribute("id", "newLoadDiv");
+  newnode.innerHTML = html;
+  var modelLoading = document.body;
+  modelLoading.appendChild(newnode);
+
+  // document.onreadystatechange = closeLoading;//当页面加载状态改变的时候执行这个方法.
+}
+
 const Fetch = function (url = '', fetchData = {}, type = 'GET') {
   type = type.toUpperCase();
   let requestConfig = {
@@ -42,11 +75,13 @@ const Fetch = function (url = '', fetchData = {}, type = 'GET') {
 
 
   const defer = new Promise((resolve, reject) => {
+    NewLoading();
     fetch(url, requestConfig)
       .then(response => {
         return response.json()
       })
       .then(data => {
+        closeLoading();
         if (data.status !== 200) {
           toastr.error(data.message);
           toastr.error(data.message);
