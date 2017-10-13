@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-12">
-            <input type="text" class="form-control login-form" placeholder="密码" v-model="passWord" v-on:input = "changeState" @blur ="passw()">
+            <input type="password" class="form-control login-form" placeholder="密码" v-model="passWord" v-on:input = "changeState" @blur ="passw()">
           </div>
           <div class="col-sm-12 errorMessge" v-bind:class="{'messge':passwErrorMessge}">密码不能为空</div>
         </div>
